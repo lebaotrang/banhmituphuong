@@ -1,0 +1,125 @@
+@import "src/styles/colors";
+
+.app-order-page {
+  padding: 15px 0;
+  .app-order-page-empty{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: white;
+    text-align: center;
+    padding: 50px 15px;
+    fa-icon {
+      font-size: 50px;
+      color: #d6d6d6;
+    }
+  }
+  .app-order-panel {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: white;
+    padding: 15px;
+    margin-bottom: 30px;
+    .app-order-panel-title {
+      background-color: $color_primary;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 3px;
+    }
+    .form-group {
+      label {
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
+  .app-order-items {
+  }
+  .app-order-totals {
+    margin: 15px 0;
+    .app-order-total{
+      margin: 10px 0;
+      display: flex;
+      .app-order-total-title {
+        flex: 1;
+      }
+      .app-order-total-value {
+      }
+    }
+    .app-order-total-sum {
+      font-weight: 500;
+      color: black;
+    }
+  }
+  .app-order-payments, .app-order-info {
+    margin-top: 15px;
+  }
+  .app-order-address-check {
+    margin-top: 10px;
+    .app-order-address-yes{
+      color: black;
+    }
+    .app-order-address-no {
+      color: red;
+    }
+    .app-order-address-edit {
+      color: $color_primary;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+  }
+  .app-order-address-notes {
+    margin-top: 10px;
+    font-size: 14px;
+    span {
+      font-weight: 500;
+      color: $color_primary;
+    }
+  }
+}
+
+.app-menu-cart-button {
+  background-color: $color_secondary;
+  color: white;
+  margin-top: 15px;
+}
+
+a{
+  color: $color_primary;
+}
+
+
+.app-menu-cart-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #efefef;
+  .app-menu-cart-item-wrapper{
+    display: flex;
+    //align-items: center;
+    .app-menu-cart-item-num {
+      background-color: $color_primary;
+      color: white;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    .app-menu-cart-item-main {
+      flex: 1;
+      .app-menu-cart-item-name {
+        font-size: 14px;
+        color: $color_primary;
+        margin-bottom: 2px;
+      }
+      .app-menu-cart-item-price{
+        color: black;
+        font-size: 14px;
+      }
+      .app-menu-cart-item-notes {
+        font-size: 12px;
+      }
+    }
+  }
+}

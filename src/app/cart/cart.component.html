@@ -1,0 +1,226 @@
+<div class="container">
+  <div [hidden]="cartItemCount>0 || !foodData" class="app-cart-page">
+    <div class="app-cart-page-empty">
+      <fa-icon [icon]="fa.faCartPlus"></fa-icon>
+      <div>Bạn chưa chọn món nào, Vui lòng chọn món bạn yêu thích để đặt hàng</div>
+      <div><a [routerLink]="'/'">Chọn món</a></div>
+    </div>
+  </div>
+  <div [hidden]="foodData" class="app-cart-page">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="app-cart-panel">
+          <ngx-skeleton-loader [theme]="{
+                  height: '40px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '34px'
+                }" count="1">
+              </ngx-skeleton-loader>
+            </div>
+            <div class="form-group col-md-6">
+              <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '34px'
+                }" count="1">
+              </ngx-skeleton-loader>
+            </div>
+          </div>
+          <ngx-skeleton-loader [theme]="{
+                  height: '60px'
+                }" count="1">
+          </ngx-skeleton-loader>
+        </div>
+        <div class="app-cart-panel">
+          <ngx-skeleton-loader [theme]="{
+                  height: '42px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '34px'
+                }" count="1">
+              </ngx-skeleton-loader>
+            </div>
+            <div class="form-group col-md-6">
+              <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '34px'
+                }" count="1">
+              </ngx-skeleton-loader>
+            </div>
+          </div>
+          <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '34px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '50px'
+                }" count="1">
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="app-cart-panel">
+          <ngx-skeleton-loader [theme]="{
+                  height: '40px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '60px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '60px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+          </ngx-skeleton-loader>
+          <ngx-skeleton-loader [theme]="{
+                  height: '40px'
+                }" count="1">
+          </ngx-skeleton-loader>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [hidden]="cartItemCount===0 || !foodData" class="app-cart-page">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="app-cart-panel">
+          <div class="app-cart-panel-title">THANH TOÁN & GIAO NHẬN</div>
+          <div class="app-cart-payments">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Phương thức thanh toán</label>
+                <select class="custom-select" [(ngModel)]="order.paymentType">
+                  <option value="cash">Thanh toán bằng tiền mặt</option>
+<!--                  <option value="card">Thanh toán bằng credit card</option>-->
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Hình thức giao hàng</label>
+                <select class="custom-select" [(ngModel)]="order.shipmentType">
+                  <option value="pickup">Nhận tại tiệm</option>
+<!--                  <option value="home">Giao tận nhà</option>-->
+                </select>
+              </div>
+            </div>
+            <div class="alert alert-warning" role="alert" *ngIf="order.shipmentType === 'home'">
+              Chúng tôi chỉ giao hàng trong bán kính 3km tính từ: <a href="https://www.google.com/maps/place/106+R%E1%BA%A1ch+B%C3%B9ng+Binh,+Ph%C6%B0%E1%BB%9Dng+9,+Qu%E1%BA%ADn+3,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7827064,106.680327,21z/data=!4m5!3m4!1s0x31752f2d08835807:0x26e0d85d766d83f7!8m2!3d10.7828242!4d106.680395" target="_blank"><strong>106 Rạch Bùng Binh, phường 9, Quận 3, TP. HCM</strong></a>, hãy nhập địa chỉ bên dưới để biết chính xác khoảng cách từ địa chỉ của bạn đến tiệm chúng tôi.
+            </div>
+            <div class="alert alert-primary" role="alert" *ngIf="order.shipmentType === 'pickup'">
+              Bạn sẽ đến nhận hàng tại địa chỉ: <a href="https://www.google.com/maps/place/106+R%E1%BA%A1ch+B%C3%B9ng+Binh,+Ph%C6%B0%E1%BB%9Dng+9,+Qu%E1%BA%ADn+3,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7827064,106.680327,21z/data=!4m5!3m4!1s0x31752f2d08835807:0x26e0d85d766d83f7!8m2!3d10.7828242!4d106.680395" target="_blank"><strong>106 Rạch Bùng Binh, phường 9, Quận 3, TP. HCM</strong></a>
+            </div>
+          </div>
+        </div>
+        <div class="app-cart-panel">
+          <div class="app-cart-panel-title">THÔNG TIN ĐẶT HÀNG</div>
+          <div class="app-cart-info">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Họ tên</label>
+                <input placeholder="Họ và tên của bạn" [(ngModel)]="order.info.name" class="form-control" [class.is-invalid]="errors.name">
+                <div class="invalid-feedback">{{errors.name}}</div>
+              </div>
+              <div class="form-group col-md-6">
+                <label>Điện thoại</label>
+                <input placeholder="Điện thoại liên hệ" [(ngModel)]="order.info.phone" class="form-control" [class.is-invalid]="errors.phone">
+                <div class="invalid-feedback">{{errors.phone}}</div>
+              </div>
+            </div>
+            <div class="form-group" *ngIf="order.shipmentType === 'home'">
+              <label>Địa chỉ nhận hàng</label>
+              <input
+                *ngIf="order.info.address.length === 0"
+                [class.is-invalid]="errors.address"
+                [options]="{componentRestrictions: { country: 'VN' }}"
+                (onAddressChange)="handleAddressChange($event)" ngx-google-places-autocomplete #placesRef="ngx-places" placeholder="Nhập địa chỉ để biết khoảng cách" class="form-control">
+              <div class="invalid-feedback">{{errors.address}}</div>
+              <div *ngIf="calDistance !== null" class="app-cart-address-check">
+                <span class="app-cart-address-no" *ngIf="calDistance>3000">Giao hàng đến <strong>{{order.info.address}}</strong>. Bạn cách chúng tôi: {{calDistanceText}}. Chúng tôi không hỗ trợ giao hàng đến địa chỉ này.</span>
+                <span class="app-cart-address-yes" *ngIf="calDistance<=3000">Giao hàng đến <strong>{{order.info.address}}</strong>. (Cách {{calDistanceText}})</span>
+                <div (click)="changeAddress()" class="app-cart-address-edit"><fa-icon [icon]="fa.faEdit"></fa-icon> Đổi địa chỉ khác</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Ghi chú cho đơn hàng</label>
+              <textarea placeholder="Lời nhắn đến chúng tôi" [(ngModel)]="order.info.notes" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="app-cart-panel">
+          <div class="app-cart-panel-title">ĐƠN HÀNG CỦA BẠN</div>
+          <div class="app-cart-items">
+            <app-cart-form (cartChanged)="cartChanged($event)"></app-cart-form>
+          </div>
+          <div class="app-cart-totals" *ngIf="cartItemCount">
+              <div class="app-cart-total">
+                <div class="app-cart-total-title">Tổng {{cartItemCount}} món</div>
+                <div class="app-cart-total-value"><span>{{cartTotal | number}}</span><sup>₫</sup></div>
+              </div>
+            <div class="app-cart-total" *ngIf="order.shipmentType === 'home'">
+              <div class="app-cart-total-title">Phí giao hàng</div>
+              <div class="app-cart-total-value"><span>{{20000 | number}}</span><sup>₫</sup></div>
+            </div>
+            <div class="app-cart-total">
+              <div class="app-cart-total-title app-cart-total-sum">Tổng cộng</div>
+              <div class="app-cart-total-value app-cart-total-sum"><span>{{(cartTotal + (order.shipmentType === 'home' ? 20000 : 0)) | number}}</span><sup>₫</sup></div>
+            </div>
+            <a (click)="submit(captchaRef)" *ngIf="cartItemCount && order.paymentType === 'card'" class="btn btn-block app-menu-cart-button">THANH TOÁN</a>
+            <a (click)="submit(captchaRef)" *ngIf="cartItemCount && order.paymentType !== 'card'" class="btn btn-block app-menu-cart-button">GỬI ĐƠN ĐẶT HÀNG</a>
+            <re-captcha
+              #captchaRef="reCaptcha"
+              (resolved)="reCaptchaResolved($event)"
+              (error)="reCaptchaOnError($event)"
+              errorMode="handled"
+              siteKey="6Le4LhUaAAAAALaykfnisPIPdbDQTiRoo5cwdPh4"
+              size="invisible"
+            ></re-captcha>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-spinner name="screen" type="ball-pulse-sync" color="#e74c3c">
+  <p style="font-size: 20px; color: #e74c3c">Chờ tí nhé...</p>
+</ngx-spinner>

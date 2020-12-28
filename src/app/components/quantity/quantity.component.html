@@ -1,0 +1,6 @@
+<div class="app-quantity">
+  <div (click)="ajd(-1)" class="app-quantity-sub app-quantity-ajd">-</div>
+  <div class="app-quantity-amount">{{quantity}}</div>
+  <div (click)="ajd(1)" class="app-quantity-add app-quantity-ajd">+</div>
+  <div *ngIf="deleteButton" (click)="delete()" class="app-quantity-delete"><fa-icon [icon]="fa.faTrash"></fa-icon></div>
+</div>

@@ -1,0 +1,36 @@
+@import "src/styles/colors";
+
+.app-menu-cart-item {
+  padding: 15px 0;
+  border-bottom: 1px solid #efefef;
+  .app-menu-cart-item-wrapper{
+    display: flex;
+    //align-items: center;
+    .app-menu-cart-item-num {
+      background-color: $color_primary;
+      color: white;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    .app-menu-cart-item-main {
+      flex: 1;
+      .app-menu-cart-item-name {
+        font-size: 14px;
+        color: $color_primary;
+        margin-bottom: 2px;
+      }
+      .app-menu-cart-item-price{
+        color: black;
+        font-size: 14px;
+      }
+      .app-menu-cart-item-notes {
+        font-size: 12px;
+      }
+    }
+  }
+}

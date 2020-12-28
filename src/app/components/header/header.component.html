@@ -1,0 +1,38 @@
+<header class="app-header d-none d-lg-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="app-logo pt-2 pb-2">
+          <a [routerLink]="'/'" href="#" (click)="$event.preventDefault(); false" class="d-flex">
+            <img src="assets/images/bmtp-logo.png">
+            <span class="d-none d-lg-inline-block my-auto">BÁNH MÌ TỨ PHƯƠNG
+              <small class="d-none d-lg-block">106 Rạch Bùng Binh, phường 9, Quận 3, TP. HCM</small>
+            </span>
+          </a>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="app-top">
+          <div class="d-inline-block align-middle app-phone">
+            <fa-icon [icon]="fa.faPhone"></fa-icon>
+            <a href="tel:0995 242 123">0995 242 123</a>
+          </div>
+<!--          <a href="#" class="align-middle d-inline-block app-login">-->
+<!--            ĐĂNG NHẬP-->
+<!--          </a>-->
+          <a [routerLink]="'gio-hang'" class="d-inline-block align-middle app-cart-icon">
+            <fa-icon [icon]="fa.faShoppingCart"></fa-icon>
+            <span class="app-cart-icon-num">{{cartTotal}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<header class="app-header-mobile d-lg-none">
+  <div class="app-header-wrapper">
+    <div class="app-name">
+      <span>BÁNH MÌ TỨ PHƯƠNG</span>
+    </div>
+  </div>
+</header>

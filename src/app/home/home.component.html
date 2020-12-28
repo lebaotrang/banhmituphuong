@@ -1,0 +1,214 @@
+<!--<div class="app-banner">-->
+<!--<img src="assets/banners/banner.jpg">-->
+<!--</div>-->
+<div class="container">
+  <div class="app-order-menu">
+    <div class="app-order-menu-wrapper">
+      <div class="app-menu-cats d-none d-lg-block"
+           stickySidebar
+           containerSelector=".app-order-menu-wrapper"
+           innerWrapperSelector=".app-menu-cats-wrapper"
+      >
+        <div class="app-menu-cats-wrapper">
+          <div class="app-menu-cat-list">
+            <div *ngIf="!foodData" class="app-dump-cats">
+              <div *ngFor="let i of [1, 2, 3, 4]" class="app-dump-cat">
+                <div class="app-dump-cat-thumb">
+                  <ngx-skeleton-loader count="1" appearance="circle"></ngx-skeleton-loader>
+                </div>
+                <div class="app-dump-cat-name">
+                  <ngx-skeleton-loader [theme]="{
+                  height: '20px',
+                  marginTop: '10px'
+                }" count="1"></ngx-skeleton-loader>
+                </div>
+              </div>
+            </div>
+            <ul *ngIf="foodData">
+              <li class="" *ngFor="let item of foodData" [ngClass]="{'active': activeCatId === 'cat-'+item.id}">
+                <a [ngxScrollTo]="'#cat-'+item.id" class="app-menu-cat-item">
+                  <div class="app-menu-cat-thumb" [style]="{backgroundImage: 'url('+item.thumb+')'}"></div>
+                  <div class="app-menu-cat-name"><span>{{item.name}}</span></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="app-menu-cats app-menu-cats-mobile d-none">
+        <div class="app-menu-cats-wrapper">
+          <div class="app-menu-cat-list">
+            <ul *ngIf="foodData">
+              <li class="" *ngFor="let item of foodData" [ngClass]="{'active': activeCatId === 'cat-'+item.id}">
+                <a [ngxScrollTo]="'#cat-'+item.id" class="app-menu-cat-item">
+                  <div class="app-menu-cat-thumb" [style]="{backgroundImage: 'url('+item.thumb+')'}"></div>
+                  <div class="app-menu-cat-name"><span>{{item.name}}</span></div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="app-menu-items" id="app-menu-items">
+        <!--      <div class="app-menu-search">-->
+        <!--        <input class="form-control" placeholder="Bạn tìm món gì?">-->
+        <!--        <fa-icon class="app-menu-search-icon" [icon]="fa.faSearch"></fa-icon>-->
+        <!--      </div>-->
+        <div *ngIf="!foodData">
+          <div *ngFor="let i of [1, 2, 3]" class="app-dump-item-cat">
+            <ngx-skeleton-loader [theme]="{
+                  height: '40px'
+                }" count="1">
+            </ngx-skeleton-loader>
+            <div>
+              <div *ngFor="let z of [1, 2]" class="app-dump-item-body">
+                <div class="app-dump-item-left">
+                  <ngx-skeleton-loader [theme]="{
+                  height: '80px',
+                  width: '80px',
+                  borderRadius: '3px'
+                }" count="1">
+                  </ngx-skeleton-loader>
+                </div>
+                <div class="app-dump-item-right">
+                  <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+                  </ngx-skeleton-loader>
+                  <ngx-skeleton-loader [theme]="{
+                  height: '10px'
+                }" count="1">
+                  </ngx-skeleton-loader>
+                  <ngx-skeleton-loader [theme]="{
+                  height: '10px'
+                }" count="1">
+                  </ngx-skeleton-loader>
+                  <ngx-skeleton-loader [theme]="{
+                  height: '10px'
+                }" count="1">
+                  </ngx-skeleton-loader>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="foodData">
+          <div *ngFor="let item of foodData" class="app-menu-item-cat" [id]="'cat-'+item.id">
+            <div class="app-menu-item-cat-title">
+              <h1>{{item.name}}</h1>
+            </div>
+            <div class="app-menu-item-list">
+              <div (click)="showOrderForm(order_form, food)" *ngFor="let food of item.items" class="app-menu-item">
+                <div class="app-menu-item-thumb" [style]="{backgroundImage: 'url('+food.thumb+')'}"></div>
+                <div class="app-menu-item-info">
+                  <div class="app-menu-item-title">
+                    <h2>{{food.name}}</h2>
+                  </div>
+                  <div class="app-menu-item-desc">
+                    {{food.desc}}
+                  </div>
+                  <div class="app-menu-item-mobile-action">
+                    <div class="app-menu-item-price">
+                      <span>{{food.price | number}}</span><sup>₫</sup>
+                    </div>
+                    <div class="app-menu-item-add">
+                      Chọn món
+                    </div>
+                  </div>
+                </div>
+                <div class="app-menu-item-price">
+                  <span>{{food.price | number}}</span><sup>₫</sup>
+                </div>
+                <div class="app-menu-item-add">
+                  +
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="app-menu-cart"
+           stickySidebar
+           containerSelector=".app-order-menu-wrapper"
+           innerWrapperSelector=".app-menu-cart-wrapper"
+      >
+        <div class="app-menu-cart-wrapper">
+          <div class="app-menu-cart-block">
+            <div *ngIf="!foodData">
+              <ngx-skeleton-loader [theme]="{
+                  height: '20px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '80px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '80px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '30px'
+                }" count="1">
+              </ngx-skeleton-loader>
+              <ngx-skeleton-loader [theme]="{
+                  height: '40px'
+                }" count="1">
+              </ngx-skeleton-loader>
+            </div>
+            <div *ngIf="foodData" class="app-menu-cart-header">
+              <fa-icon [icon]="fa.faShoppingCart"></fa-icon>
+              <span>Đơn đặt món</span>
+            </div>
+            <div *ngIf="foodData && cartItemCount === 0" class="app-menu-cart-empty">
+              <fa-icon [icon]="fa.faCartArrowDown"></fa-icon>
+              <div>Hãy chọn món yêu thích!</div>
+            </div>
+            <app-cart-form (cartChanged)="cartChanged($event)"></app-cart-form>
+            <div *ngIf="cartItemCount" class="app-menu-cart-total">
+              <div class="app-menu-cart-total-title">Tổng cộng</div>
+              <div class="app-menu-cart-total-value"><span>{{cartTotal | number}}</span><sup>₫</sup></div>
+            </div>
+            <a [routerLink]="'gio-hang'" *ngIf="cartItemCount" class="btn btn-block app-menu-cart-button">ĐẶT HÀNG</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="app-order-mobile d-lg-none">
+  <div class="app-order-mobile-left"><fa-icon [icon]="fa.faShoppingCart"></fa-icon> <span>Tổng cộng: {{cartTotal | number}}</span><sup>₫</sup></div>
+  <div class="app-order-mobile-right">
+    <a [routerLink]="'gio-hang'" class="btn btn-block btn-sm">ĐẶT HÀNG</a>
+  </div>
+</div>
+<ng-template #order_form let-order_form>
+  <div class="modal-header">
+    <h4 class="modal-title">ĐẶT MÓN</h4>
+    <button type="button" class="close" aria-label="Close" (click)="order_form.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" ngbAutofocus>
+    <div class="app-order-food">
+      <div class="app-order-food-main">
+        <div class="app-order-food-thumb" [style]="{backgroundImage: 'url('+orderingFood.food.thumb+')'}"></div>
+        <div class="app-order-food-body">
+          <div class="app-order-food-name">{{orderingFood.food.name}}</div>
+          <div class="app-order-food-price"><span>{{orderingFood.food.price | number}}</span><sup>₫</sup></div>
+          <div class="app-order-food-quantity">
+            <app-quantity (onChange)="onChangeFoodOrdering($event)"></app-quantity>
+          </div>
+        </div>
+      </div>
+      <div class="app-order-food-notes">
+        <div class="app-order-food-notes-title">Ghi chú</div>
+        <textarea [(ngModel)]="orderingFood.notes" class="form-control" rows="3" placeholder="Lời nhắn đến nhân viên phục vụ món. VD: Đừng để ớt!"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn" (click)="addToCart(order_form)">Thêm món - {{(orderingFood.amount * orderingFood.food.price) | number}}<sup>₫</sup></button>
+  </div>
+</ng-template>

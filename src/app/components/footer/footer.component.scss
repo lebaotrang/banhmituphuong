@@ -1,0 +1,9 @@
+@import "src/styles/colors";
+
+.app-footer {
+  background-color: $color_secondary;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+}

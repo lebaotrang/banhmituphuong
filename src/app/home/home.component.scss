@@ -1,0 +1,427 @@
+@import "src/styles/colors";
+
+.app-banner {
+  //height: 850px;
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  //background-position: bottom;
+  img {
+    width: 100%;
+  }
+}
+
+.app-order-menu-wrapper {
+  display: flex;
+  .app-menu-cats {
+    z-index: 100;
+    width: 250px;
+    .app-menu-cats-wrapper {
+      .app-menu-cat-list {
+        background-color: white;
+        position: relative;
+        z-index: 1;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+        margin-top: 10px;
+        ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: block;
+          li {
+            font-size: 14px;
+            margin: 5px 0;
+            &:hover {
+              .app-menu-cat-item {
+                background-color: $color_primary;
+                color: white;
+              }
+            }
+            .app-menu-cat-item {
+              display: flex;
+              align-items: center;
+              color: $color_primary;
+              transition: all 0.25s ease-in-out 0s;
+              cursor: pointer;
+              padding: 5px;
+              border-radius: 3px;
+              .app-menu-cat-thumb {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                background-position: center;
+                background-size: cover;
+                background-color: #f8f8f8;
+                margin-right: 10px;
+              }
+              .app-menu-cat-name {
+                flex: 1
+              }
+            }
+            &.active {
+              .app-menu-cat-item {
+                background-color: $color_primary;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      .app-dump-cats {
+        .app-dump-cat {
+          display: flex;
+          align-items: center;
+          .app-dump-cat-thumb {
+
+          }
+          .app-dump-cat-name {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+  .app-menu-cats-mobile {
+    position: fixed;
+    top: 60px;
+    .app-menu-cat-item {
+      background-color: white!important;
+      color: $color_primary!important;
+    }
+  }
+  .app-menu-items {
+    flex: 1;
+    margin: 10px 15px 15px 15px;
+    min-height: 50px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    .app-menu-search {
+      position: relative;
+      .app-menu-search-icon {
+        position: absolute;
+        right: 15px;
+        top: 8px;
+      }
+    }
+    .app-menu-item-cat {
+      margin: 20px 0;
+      &:first-child {
+        margin-top: 0;
+      }
+      .app-menu-item-cat-title {
+        background-color: $color_primary;
+        color: white;
+        padding: 10px;
+        border-radius: 3px;
+        h1 {
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: 500;
+          margin: 0;
+        }
+      }
+      .app-menu-item-list {
+        .app-menu-item {
+          cursor: pointer;
+          padding: 15px 0;
+          border-top: 1px solid #d2d2d2;
+          display: flex;
+          .app-menu-item-thumb {
+            height: 80px;
+            width: 80px;
+            border-radius: 3px;
+            background-color: #f8f8f8;
+            background-position: center;
+            background-size: cover;
+            margin-right: 15px;
+          }
+          .app-menu-item-info {
+            flex: 1;
+            .app-menu-item-title {
+              margin-bottom: 5px;
+              h2 {
+                color: $color_primary;
+                font-size: 16px;
+                font-weight: 500;
+              }
+            }
+            .app-menu-item-desc {
+              font-size: 14px;
+            }
+            .app-menu-item-mobile-action {
+              display: none;
+              align-items: center;
+              margin-top: 10px;
+              .app-menu-item-price {
+                margin: 0;
+                flex: 1;
+              }
+              .app-menu-item-add {
+                font-size: 14px;
+                width: auto;
+                padding: 0 15px;
+                height: 40px;
+                line-height: 40px;
+              }
+            }
+          }
+          .app-menu-item-price {
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            align-self: center;
+            margin: 0 15px;
+          }
+          .app-menu-item-add {
+            align-self: center;
+            width: 30px;
+            height: 30px;
+            background-color: $color_secondary;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 3px;
+          }
+        }
+      }
+    }
+    .app-dump-item-cat {
+      margin-bottom: 30px;
+      .app-dump-item-body {
+        display: flex;
+        padding-top: 15px;
+        margin-bottom: 15px;
+        border-top: 1px solid #f1f1f1;
+        &:first-child {
+          padding-top: 0;
+          border-top: none;
+        }
+        .app-dump-item-left {
+          width: 80px;
+          height: 80px;
+          margin-right: 15px;
+        }
+        .app-dump-item-right {
+          flex: 1
+        }
+      }
+    }
+  }
+  .app-menu-cart {
+    width: 320px;
+    .app-menu-cart-wrapper {
+      .app-menu-cart-block {
+        background-color: white;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+        margin-top: 10px;
+        .app-menu-cart-header {
+          background-color: $color_primary;
+          color: white;
+          text-transform: uppercase;
+          padding: 5px 10px;
+          font-size: 14px;
+          font-weight: 500;
+          span {
+            display: inline-block;
+            vertical-align: center;
+            margin-left: 10px;
+          }
+        }
+        .app-menu-cart-total {
+          display: flex;
+          padding-top: 15px;
+          .app-menu-cart-total-title {
+            flex: 1
+          }
+        }
+        .app-menu-cart-button {
+          background-color: $color_secondary;
+          color: white;
+          margin-top: 15px;
+        }
+        .app-menu-cart-empty {
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          fa-icon {
+            font-size: 30px;
+          }
+          div {
+            font-size: 12px;
+          }
+        }
+        .app-menu-cart-items {
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .app-order-menu-wrapper {
+    display: block;
+    .app-menu-cats {
+      width: auto;
+      margin: 0px -15px;
+      .app-menu-cats-wrapper {
+        .app-menu-cat-list{
+          padding: 0;
+          margin-top: 0;
+          border-radius: 0;
+          ul {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            width: 100vw;
+            li {
+              margin: 0;
+              .app-menu-cat-item {
+                border-radius: 0;
+                flex-wrap: nowrap;
+                padding: 10px;
+                .app-menu-cat-thumb {
+                  margin-right: 2px;
+                }
+                .app-menu-cat-name {
+                  flex: none;
+                  white-space: nowrap;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.is-affixed {
+        z-index: 99999;
+        .app-menu-cats-wrapper{
+          z-index: 99999;
+        }
+      }
+    }
+    .app-menu-cart {
+      display: none;
+
+    }
+    .app-menu-items {
+      margin: 15px 0 0 0;
+      padding: 5px;
+      .app-menu-item-cat {
+        .app-menu-item-list {
+          .app-menu-item {
+            .app-menu-item-thumb {
+              width: 80px;
+              height: 80px;
+            }
+            .app-menu-item-info {
+              .app-menu-item-mobile-action {
+                display: flex;
+              }
+            }
+            &>.app-menu-item-price{
+              display: none;
+            }
+            &>.app-menu-item-add {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.app-order-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $color_secondary;
+  display: flex;
+  padding: 10px;
+  color: white;
+  align-items: center;
+  box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.3);
+  button {
+    background-color: $color_primary;
+    color: white;
+    width: 100px;
+  }
+  .app-order-mobile-left {
+    flex: 1;
+    font-size: 14px;
+    span {
+      margin-left: 5px;
+    }
+  }
+  .app-order-mobile-center {
+  }
+  .app-order-mobile-right {
+    .btn {
+      background-color: #0e367f;
+      color: white;
+    }
+  }
+}
+
+.modal-header {
+  button.close{
+    color: white;
+  }
+  background-color: $color_primary;
+  .modal-title {
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.modal-footer {
+  button {
+    background-color: $color_secondary;
+    color: white;
+  }
+}
+
+.app-order-food {
+  .app-order-food-main {
+    display: flex;
+  }
+  .app-order-food-notes {
+    margin-top: 15px;
+    .app-order-food-notes-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: black;
+    }
+  }
+  .app-order-food-thumb {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    margin-right: 15px;
+  }
+  .app-order-food-body {
+    flex: 1;
+    .app-order-food-name {
+      color: $color_primary;
+      font-weight: bold;
+    }
+    .app-order-food-price {
+      color: black;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+  }
+}

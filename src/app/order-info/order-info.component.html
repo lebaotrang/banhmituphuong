@@ -1,0 +1,215 @@
+<div class="container">
+    <!-- <div [hidden]="items" class="app-order-page">
+      <div class="app-order-page-empty">
+        <fa-icon [icon]="fa.faCartPlus"></fa-icon>
+        <div>Bạn chưa chọn món nào, Vui lòng chọn món bạn yêu thích để đặt hàng</div>
+        <div><a [routerLink]="'/'">Chọn món</a></div>
+      </div>
+    </div> -->
+    <div [hidden]="items" class="app-order-page">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="app-order-panel">
+            <ngx-skeleton-loader [theme]="{
+                    height: '40px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{
+                    height: '34px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+              </div>
+              <div class="form-group col-md-6">
+                <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{
+                    height: '34px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+              </div>
+            </div>
+            <ngx-skeleton-loader [theme]="{
+                    height: '60px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+          </div>
+          <div class="app-order-panel">
+            <ngx-skeleton-loader [theme]="{
+                    height: '42px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{
+                    height: '34px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+              </div>
+              <div class="form-group col-md-6">
+                <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+                <ngx-skeleton-loader [theme]="{
+                    height: '34px'
+                  }" count="1">
+                </ngx-skeleton-loader>
+              </div>
+            </div>
+            <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '34px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '50px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="app-order-panel">
+            <ngx-skeleton-loader [theme]="{
+                    height: '40px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '60px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '60px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '20px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+            <ngx-skeleton-loader [theme]="{
+                    height: '40px'
+                  }" count="1">
+            </ngx-skeleton-loader>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div [hidden]="false" class="app-order-page">
+      <div class="row">
+        <div class="col-lg-8">
+          
+          <div class="app-order-panel">
+            <div class="app-order-panel-title">THÔNG TIN ĐẶT HÀNG</div>
+            <div class="app-order-info">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label>Họ tên</label>
+                  <!-- <input placeholder="Họ và tên của bạn" [(ngModel)]="order.info.name" class="form-control" [class.is-invalid]="errors.name"> -->
+                  <div class="">{{info?.name}}</div>
+                </div>
+                <div class="form-group col-md-4">
+                  <label>Điện thoại</label>
+                  <!-- <input placeholder="Điện thoại liên hệ" [(ngModel)]="order.info.phone" class="form-control" [class.is-invalid]="errors.phone"> -->
+                  <div class="">{{info?.phone}}</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Ngày đặt hàng</label>
+                    <div class="">{{created_at && (created_at.toDate() | date: 'dd/MM/yyyy hh:mm a') }}</div>
+                    <!-- <textarea placeholder="Lời nhắn đến chúng tôi" [(ngModel)]="order.info.notes" class="form-control" rows="3"></textarea> -->
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label>Ghi chú cho đơn hàng</label>
+                <div class="">{{info?.note}}</div>
+                <!-- <textarea placeholder="Lời nhắn đến chúng tôi" [(ngModel)]="order.info.notes" class="form-control" rows="3"></textarea> -->
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="app-order-panel">
+            <div class="app-order-panel-title">ĐƠN HÀNG CỦA BẠN</div>
+            <div *ngIf="items.length" class="app-menu-cart-items">
+                <div *ngFor="let item of items; index as idx" class="app-menu-cart-item">
+                  <div class="app-menu-cart-item-wrapper">
+                    <div class="app-menu-cart-item-num">{{idx + 1}}</div>
+                    <div class="app-menu-cart-item-main">
+                      <div class="app-menu-cart-item-name">{{item.name}}</div>
+                      <div class="app-menu-cart-item-price"><span>{{item.price || 0 | number}}</span><sup>₫</sup></div>
+                      <div class="app-menu-cart-item-notes">{{item.notes}}</div>
+                    </div>
+                    <div class="app-menu-cart-item-prices">
+                      <div class="app-menu-cart-item-action">
+                        <div class="app-quantity">
+                            <div class="app-quantity-amount">x{{item.quantity}}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                
+            <!-- <div class="app-order-items">
+              <app-order-form (cartChanged)="cartChanged($event)"></app-order-form>
+            </div>
+            <div class="app-order-totals" *ngIf="cartItemCount">
+                <div class="app-order-total">
+                  <div class="app-order-total-title">Tổng {{cartItemCount}} món</div>
+                  <div class="app-order-total-value"><span>{{cartTotal | number}}</span><sup>₫</sup></div>
+                </div>
+              <div class="app-order-total" *ngIf="order.shipmentType === 'home'">
+                <div class="app-order-total-title">Phí giao hàng</div>
+                <div class="app-order-total-value"><span>{{20000 | number}}</span><sup>₫</sup></div>
+              </div>
+              <div class="app-order-total">
+                <div class="app-order-total-title app-order-total-sum">Tổng cộng</div>
+                <div class="app-order-total-value app-order-total-sum"><span>{{(cartTotal + (order.shipmentType === 'home' ? 20000 : 0)) | number}}</span><sup>₫</sup></div>
+              </div>
+              <a (click)="submit(captchaRef)" *ngIf="cartItemCount && order.paymentType === 'card'" class="btn btn-block app-menu-cart-button">THANH TOÁN</a>
+              <a (click)="submit(captchaRef)" *ngIf="cartItemCount && order.paymentType !== 'card'" class="btn btn-block app-menu-cart-button">GỬI ĐƠN ĐẶT HÀNG</a>
+              <re-captcha
+                #captchaRef="reCaptcha"
+                (resolved)="reCaptchaResolved($event)"
+                (error)="reCaptchaOnError($event)"
+                errorMode="handled"
+                siteKey="6Le4LhUaAAAAALaykfnisPIPdbDQTiRoo5cwdPh4"
+                size="invisible"
+              ></re-captcha>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ngx-spinner name="screen" type="ball-pulse-sync" color="#e74c3c">
+    <p style="font-size: 20px; color: #e74c3c">Chờ tí nhé...</p>
+  </ngx-spinner>
+  

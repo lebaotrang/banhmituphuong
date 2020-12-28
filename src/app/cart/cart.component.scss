@@ -1,0 +1,91 @@
+@import "src/styles/colors";
+
+.app-cart-page {
+  padding: 15px 0;
+  .app-cart-page-empty{
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: white;
+    text-align: center;
+    padding: 50px 15px;
+    fa-icon {
+      font-size: 50px;
+      color: #d6d6d6;
+    }
+  }
+  .app-cart-panel {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    background: white;
+    padding: 15px;
+    margin-bottom: 30px;
+    .app-cart-panel-title {
+      background-color: $color_primary;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 3px;
+    }
+    .form-group {
+      label {
+        color: black;
+        font-weight: 500;
+      }
+    }
+  }
+  .app-cart-items {
+
+  }
+  .app-cart-totals {
+    margin: 15px 0;
+    .app-cart-total{
+      margin: 10px 0;
+      display: flex;
+      .app-cart-total-title {
+        flex: 1;
+      }
+      .app-cart-total-value {
+
+      }
+    }
+    .app-cart-total-sum {
+      font-weight: 500;
+      color: black;
+    }
+  }
+  .app-cart-payments, .app-cart-info {
+    margin-top: 15px;
+  }
+  .app-cart-address-check {
+    margin-top: 10px;
+    .app-cart-address-yes{
+      color: black;
+    }
+    .app-cart-address-no {
+      color: red;
+    }
+    .app-cart-address-edit {
+      color: $color_primary;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+  }
+  .app-cart-address-notes {
+    margin-top: 10px;
+    font-size: 14px;
+    span {
+      font-weight: 500;
+      color: $color_primary;
+    }
+  }
+}
+
+.app-menu-cart-button {
+  background-color: $color_secondary;
+  color: white;
+  margin-top: 15px;
+}
+
+a{
+  color: $color_primary;
+}

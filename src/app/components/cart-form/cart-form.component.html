@@ -1,0 +1,17 @@
+<div *ngIf="foodData && order.length" class="app-menu-cart-items">
+<div *ngFor="let item of order; index as idx" class="app-menu-cart-item">
+  <div class="app-menu-cart-item-wrapper">
+    <div class="app-menu-cart-item-num">{{idx + 1}}</div>
+    <div class="app-menu-cart-item-main">
+      <div class="app-menu-cart-item-name">{{item.food.name}}</div>
+      <div class="app-menu-cart-item-price"><span>{{item.food.price | number}}</span><sup>₫</sup></div>
+      <div class="app-menu-cart-item-notes">{{item.notes}}</div>
+    </div>
+    <div class="app-menu-cart-item-prices">
+      <div class="app-menu-cart-item-action">
+        <app-quantity (onChange)="changeOrderQuantity($event, idx)" (onDelete)="deleteOrderItem(idx)" [deleteButton]="true" [quantity]="item.amount"></app-quantity>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
